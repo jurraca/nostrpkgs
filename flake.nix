@@ -20,6 +20,7 @@
         packages = {
           algia = pkgs.callPackage ./pkgs/algia.nix {};
           nak = pkgs.callPackage ./pkgs/nak.nix {};
+          narr = pkgs.callPackage ./pkgs/narr.nix {};
           nostr-rs-relay = pkgs.callPackage ./pkgs/nostr-rs-relay.nix { };
           nostream = pkgs.callPackage ./pkgs/nostream.nix {};
         };
