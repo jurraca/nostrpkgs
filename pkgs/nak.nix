@@ -5,9 +5,9 @@ buildGoModule rec {
   version = "0.7.3"; # You can set the appropriate version
 
   src = fetchFromGitHub {
-    owner = "fiatjaf"; # Replace with the actual GitHub username
+    owner = "fiatjaf";
     repo = "nak";
-    rev = "v" + version; # The specific version or commit to fetch
+    rev = "v" + version;
     sha256 = "sha256-1DL3U7x1QFDBWdt4pvB1ZVmlNdaTwZYdr5DGUFwFudk=";
   };
 

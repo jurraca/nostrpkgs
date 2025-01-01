@@ -2,6 +2,10 @@
 
 A collection of [Nostr](https://github.com/nostr-protocol/nostr) tools to be installed with the [Nix](https://github.com/NixOS/nix/) package manager.
 
+## Goals
+
+Easiest and fastest way to use Nostr tools.
+
 ## Usage
 
 You can think of this repository as a collection which contains build recipes for packages. It aims to provide these recipes for all major architectures, irrespective of a project's programming language or build system.
@@ -23,4 +27,11 @@ You can pass arguments to it like you usually would, in this case print the help
 Please contribute packages via PRs or request packages you would like to see included via Issues.
 
 When contributing, please follow Nixpkgs [commit conventions](https://github.com/NixOS/nixpkgs/blob/master/CONTRIBUTING.md#commit-conventions).
+
+Some pointers:
+- This is for tools, not libraries.
+- It's intended primarily for CLI and desktop, not mobile, but that may change!
+- Aim to package projects that are actively maintained.
+- Some languages are far easier to package than others: Go, Rust, Elixir.
+- Think about the future generations and avoid JavaScript if you can help it.
 
