@@ -20,6 +20,7 @@
       pkgs = nixpkgsFor system;
     in {
       algia = pkgs.callPackage ./pkgs/algia.nix {};
+      chorus = pkgs.callPackage ./pkgs/chorus.nix {};
       gitstr = pkgs.callPackage ./pkgs/gitstr.nix {};
       nak = pkgs.callPackage ./pkgs/nak.nix {};
       narr = pkgs.callPackage ./pkgs/narr.nix {};
