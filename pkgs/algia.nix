@@ -1,13 +1,13 @@
 { lib, buildGoModule, fetchFromGitHub }:
 
 buildGoModule rec {
-  pname = "mattn";
-  version = "0.0.82"; # You can set the appropriate version
+  pname = "algia";
+  version = "0.0.82";
 
   src = fetchFromGitHub {
-    owner = "mattn"; # Replace with the actual GitHub username
+    owner = "mattn";
     repo = "algia";
-    rev = "v" + version; # The specific version or commit to fetch
+    rev = "v" + version;
     sha256 = "sha256-4ng4Vlu4XSzROtfvb9CljvpKBrTGtC2rYtx7eFbb/Iw=";
   };
 
