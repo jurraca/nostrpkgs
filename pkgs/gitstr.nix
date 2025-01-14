@@ -5,9 +5,9 @@ buildGoModule rec {
   version = "0.0.7";
 
   src = fetchFromGitHub {
-    owner = "fiatjaf"; # Replace with the actual GitHub username
+    owner = "fiatjaf";
     repo = "gitstr";
-    rev = "v" + version; # The specific version or commit to fetch
+    rev = "v" + version;
     sha256 = "sha256-djgyQqNwxtYbAzzQi+BLPrLafptQ/9218VQRwRkeJaA=";
   };
 
@@ -19,7 +19,6 @@ buildGoModule rec {
     description = "Send and receive git patches over Nostr, using NIP-34.";
     homepage = "https://github.com/fiatjaf/gitstr";
     license = licenses.mit;
-    maintainers = with maintainers; [ jurraca ];
   };
 }
 

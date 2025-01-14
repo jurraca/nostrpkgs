@@ -42,7 +42,6 @@ buildNpmPackage rec {
   meta = with lib; {
     description = "A Nostr Relay written in TypeScript";
     homepage = "https://github.com/cameri/nostream";
-    maintainers = with maintainers; [ jurraca ];
     license = licenses.mit;
   };
 }

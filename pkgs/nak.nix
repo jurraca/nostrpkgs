@@ -2,7 +2,7 @@
 
 buildGoModule rec {
   pname = "nak";
-  version = "0.7.3"; # You can set the appropriate version
+  version = "0.7.3";
 
   src = fetchFromGitHub {
     owner = "fiatjaf";
@@ -19,7 +19,6 @@ buildGoModule rec {
     description = "a command line tool for doing all things nostr";
     homepage = "https://github.com/fiatjaf/nak";
     license = licenses.mit;
-    maintainers = with maintainers; [ jurraca ];
   };
 }
 

@@ -1,8 +1,6 @@
 {
-  description = "A collection of Nostr-related packages";
-  inputs = {
-    nixpkgs.url = "nixpkgs/nixos-24.11";
-  };
+  description = "A collection of Nostr-powered packages";
+  inputs.nixpkgs.url = "nixpkgs/nixos-24.11";
 
   outputs = {
     self,
@@ -11,8 +9,6 @@
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
-      "x86_64-darwin"
-      "aarch64-darwin"
     ];
     nixpkgsFor = system: import nixpkgs {inherit system;};
   in {

@@ -2,12 +2,12 @@
 
 buildGoModule rec {
   pname = "narr";
-  version = "0.3.2"; # You can set the appropriate version
+  version = "0.3.2";
 
   src = fetchFromGitHub {
-    owner = "fiatjaf"; # Replace with the actual GitHub username
+    owner = "fiatjaf";
     repo = "narr";
-    rev = "v" + version; # The specific version or commit to fetch
+    rev = "v" + version;
     sha256 = "sha256-MdDM7ULgi/Ow3t0QcYWNSZHO/r09u1OZBUk/7RHuZCg=";
   };
 
@@ -23,7 +23,6 @@ buildGoModule rec {
     description = "self-hosted Nostr and RSS reader";
     homepage = "https://github.com/fiatjaf/narr";
     license = licenses.mit;
-    maintainers = with maintainers; [ jurraca ];
   };
 }
 

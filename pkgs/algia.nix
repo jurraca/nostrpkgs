@@ -19,7 +19,6 @@ buildGoModule rec {
     description = "A cli application for nostr written in Go";
     homepage = "https://github.com/mattn/algia";
     license = licenses.mit;
-    maintainers = with maintainers; [ jurraca ];
   };
 }
 
