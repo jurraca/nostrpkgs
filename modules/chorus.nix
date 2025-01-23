@@ -224,6 +224,7 @@ with lib; let
 
   '';
 in {
+  inherit options;
   config = mkIf cfg.enable {
     systemd.services.chorus = rec {
       wants = ["network-online.target"];
