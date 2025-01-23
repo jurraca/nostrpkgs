@@ -30,8 +30,16 @@
     });
 
     nixosModules = {
-       chorus = import ./modules/chorus.nix;
-       nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay.nix { inherit self nix-std pkgs lib config; } ;
+      chorus = import ./modules/chorus.nix;
+      nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay.nix { inherit self nix-std pkgs lib config; } ;
+    };
+
+    options = let
+      pkgs = nixpkgsFor "x86_64-linux";
+      lib = nixpkgs.lib;
+      packages = self.packages.x86_64-linux;
+    in {
+      nostr-rs-relay = pkgs.callPackage ./print-options.nix { inherit packages;};#pkgs.callPackage ./modules/nostr-rs-relay/options.nix { };
     };
   };
 }
