@@ -1,16 +1,12 @@
+{lib, packages, ... }:
+
+with lib;
 {
-  config,
-  pkgs,
-  lib,
-  ...
-}:
-with lib; let
-  options.services.chorus = {
     enable = mkEnableOption "Chorus relay";
 
     package = mkOption {
       type = types.package;
-      default = config.nostrpkgs.pkgs.chorus;
+      default = packages.chorus;
     };
 
     dataDirectory = mkOption {
@@ -216,21 +212,4 @@ with lib; let
       default = null;
       description = "Directory for Blossom file storage";
     };
-  };
-
-  cfg = config.services.chorus;
-
-  configFile = builtins.toFile "config.toml" ''
-
-  '';
-in {
-  inherit options;
-  config = mkIf cfg.enable {
-    systemd.services.chorus = rec {
-      wants = ["network-online.target"];
-    };
-    serviceConfig = {
-      ExecStart = "${cfg.package}/bin/chorus ${configFile}";
-    };
-  };
-}
+  }

@@ -1,5 +1,6 @@
 {
   pkgs,
+  moduleName,
   packages,
   ...
 }: let
@@ -27,7 +28,7 @@
 
   isOption = attrSet: builtins.hasAttr "default" attrSet;
 
-  options = pkgs.callPackage ./modules/nostr-rs-relay/options.nix {inherit packages;};
+  options = pkgs.callPackage ./modules/${moduleName}/options.nix {inherit packages;};
 in
 builtins.toJSON
 (builtins.removeAttrs
