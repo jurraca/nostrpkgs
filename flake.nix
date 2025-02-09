@@ -22,6 +22,7 @@
       algia = pkgs.callPackage ./pkgs/algia.nix {};
       chorus = pkgs.callPackage ./pkgs/chorus.nix {};
       gitstr = pkgs.callPackage ./pkgs/gitstr.nix {};
+      haven = pkgs.callPackage ./pkgs/haven.nix {};
       nak = pkgs.callPackage ./pkgs/nak.nix {};
       narr = pkgs.callPackage ./pkgs/narr.nix {};
       nostr-rs-relay = pkgs.callPackage ./pkgs/nostr-rs-relay.nix {};
