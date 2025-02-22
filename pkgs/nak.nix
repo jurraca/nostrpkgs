@@ -2,16 +2,16 @@
 
 buildGoModule rec {
   pname = "nak";
-  version = "0.11.0";
+  version = "0.11.4";
 
   src = fetchFromGitHub {
     owner = "fiatjaf";
     repo = "nak";
     rev = "v" + version;
-    sha256 = "sha256-tqdTiXLw3EC5/v6fPbsVTJudGplcU6LG6LFFzlzoPjs=";
+    sha256 = "sha256-xFATXMK7wyEgnJXmTq9BdW27xqgXUP1Mo0m5QhFIv0I=";
   };
 
-  vendorHash = "sha256-80jO8u/BdR4JIAmTIoaT2C0ztOkJp/62TGHQtT2Jl3w=";
+  vendorHash = "sha256-VkeQLWtyDfZiR0nrhmd5KCi/BIuqrFem9WhcTd3VRcc=";
 
   doCheck = false;
 
