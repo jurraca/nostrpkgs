@@ -39,8 +39,9 @@
       lib = nixpkgs.lib;
       packages = self.packages.x86_64-linux;
     in {
-      nostr-rs-relay = pkgs.callPackage ./print-options.nix { inherit packages; moduleName = "nostr-rs-relay";};
       chorus = pkgs.callPackage ./print-options.nix { inherit packages; moduleName = "chorus";};
+      haven = pkgs.callPackage ./print-options.nix { inherit packages; moduleName = "haven";};
+      nostr-rs-relay = pkgs.callPackage ./print-options.nix { inherit packages; moduleName = "nostr-rs-relay";};
     };
   };
 }
