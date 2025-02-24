@@ -1,4 +1,4 @@
-{lib}:
+{lib, packages, ... }:
 with lib; {
   enable = mkEnableOption "HAVEN service";
 

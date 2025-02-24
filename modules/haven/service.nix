@@ -2,10 +2,11 @@
   config,
   pkgs,
   lib,
+  packages,
   ...
 }:
 with lib; let
-  options.services.haven = pkgs.callPackage ./options.nix {};
+  options.services.haven = pkgs.callPackage ./options.nix { inherit packages; };
   cfg = config.services.haven;
 
   configFile = builtins.toFile ".env" ''

@@ -29,9 +29,12 @@
       nostream = pkgs.callPackage ./pkgs/nostream.nix {};
     });
 
-    nixosModules = {
+    nixosModules = let
+      packages = self.packages.x86_64-linux;
+    in {
       chorus = import ./modules/chorus/package.nix;
-      nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay/packages.nix { inherit self nix-std pkgs lib config; } ;
+      nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay/package.nix { inherit self nix-std pkgs lib config; } ;
+      haven = {config, lib, pkgs, ...}: import ./modules/haven/service.nix { inherit pkgs lib config packages; } ;
     };
 
     options = let
