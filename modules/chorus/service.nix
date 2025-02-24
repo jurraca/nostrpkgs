@@ -2,24 +2,24 @@
   config,
   pkgs,
   lib,
+  packages,
+  toTOML,
   ...
 }:
 with lib; let
-  options.services.chorus = import ./options.nix;
+  options.services.chorus = pkgs.callPackage ./options.nix {inherit packages; };
 
   cfg = config.services.chorus;
 
-  configFile = builtins.toFile "config.toml" ''
-
-  '';
+  configToml = pkgs.writeText "config.toml" (toTOML cfg);
 in {
   inherit options;
   config = mkIf cfg.enable {
     systemd.services.chorus = rec {
       wants = ["network-online.target"];
-    };
-    serviceConfig = {
-      ExecStart = "${cfg.package}/bin/chorus ${configFile}";
+      serviceConfig = {
+        ExecStart = "${cfg.package}/bin/chorus ${configToml}";
+      };
     };
   };
 }

@@ -1,10 +1,9 @@
-{ config, lib, pkgs, self, nix-std, ... }:
+{ config, lib, pkgs, packages, toTOML, ... }:
 
 with lib;
 
 let
-  toTOML = nix-std.lib.serde.toTOML;
-  options.services.nostr-rs-relay = import ./options.nix;
+  options.services.nostr-rs-relay = pkgs.callPackage ./options.nix {inherit packages; };
 
   cfg = config.services.nostr-rs-relay;
 

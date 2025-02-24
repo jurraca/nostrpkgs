@@ -1,4 +1,5 @@
-{lib, packages, ... }:
+{ lib, packages, ... }:
+
 with lib;
 {
     enable = mkEnableOption "Nostr-rs-relay service";

@@ -15,6 +15,7 @@
       "aarch64-linux"
     ];
     nixpkgsFor = system: import nixpkgs {inherit system;};
+    toTOML = nix-std.lib.serde.toTOML;
   in {
     packages = forAllSystems (system: let
       pkgs = nixpkgsFor system;
@@ -32,8 +33,8 @@
     nixosModules = let
       packages = self.packages.x86_64-linux;
     in {
-      chorus = import ./modules/chorus/service.nix;
-      nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay/service.nix { inherit self nix-std pkgs lib config; } ;
+      chorus = {config, lib, pkgs, ... }: import ./modules/chorus/service.nix { inherit pkgs lib config toTOML packages; } ;
+      nostr-rs-relay = {config, lib, pkgs, ...}: import ./modules/nostr-rs-relay/service.nix { inherit pkgs lib config toTOML packages ; } ;
       haven = {config, lib, pkgs, ...}: import ./modules/haven/service.nix { inherit pkgs lib config packages; } ;
     };
 
