@@ -3,12 +3,14 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nix-std.url = "github:chessai/nix-std";
+    ngit.url = "github:DanConwayDev/ngit-cli";
   };
 
   outputs = {
     self,
     nixpkgs,
-    nix-std
+    nix-std,
+    ngit
   }: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
@@ -28,6 +30,7 @@
       narr = pkgs.callPackage ./pkgs/narr.nix {};
       nostr-rs-relay = pkgs.callPackage ./pkgs/nostr-rs-relay.nix {};
       nostream = pkgs.callPackage ./pkgs/nostream.nix {};
+      ngit = ngit.packages.${system}.default;
     });
 
     nixosModules = let
