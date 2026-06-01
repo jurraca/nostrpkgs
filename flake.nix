@@ -1,9 +1,10 @@
 {
   description = "A collection of Nostr-powered packages";
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
     nix-std.url = "github:chessai/nix-std";
     ngit.url = "github:DanConwayDev/ngit-cli";
+    ngit.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
