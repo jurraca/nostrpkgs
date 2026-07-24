@@ -5,13 +5,16 @@
     nix-std.url = "github:chessai/nix-std";
     ngit.url = "github:DanConwayDev/ngit-cli";
     ngit.inputs.nixpkgs.follows = "nixpkgs";
+    fips.url = "github:jmcorgan/fips";
+    fips.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
     self,
     nixpkgs,
     nix-std,
-    ngit
+    ngit,
+    fips
   }: let
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
@@ -26,6 +29,7 @@
       algia = pkgs.callPackage ./pkgs/algia.nix {};
       chorus = pkgs.callPackage ./pkgs/chorus.nix {};
       gitstr = pkgs.callPackage ./pkgs/gitstr.nix {};
+      fips = fips.packages.${system}.default;
       haven = pkgs.callPackage ./pkgs/haven.nix {};
       nak = pkgs.callPackage ./pkgs/nak.nix {};
       narr = pkgs.callPackage ./pkgs/narr.nix {};
