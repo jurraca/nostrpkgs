@@ -10,7 +10,7 @@ Be the easiest, fastest, and free-est way to use Nostr tools.
 
 - Modules for relays: provide canonical module implementations so that users can just pull in a relay to their NixOS config, declare its settings, and throw it in the cloud.
 - Play nice with [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin/): should just work by adding to, or combining with, a nix-bitcoin config. Think how alby-hub can use a LN node, or NWC.
-- A Cache for binaries: provide a cache for users to leverage prebuilt binaries of theses tools, a la cache.nixos.org.
+- [X] https://nostrpkgs.cachix.org . A Cache for binaries: provide a cache for users to leverage prebuilt binaries of theses tools, a la cache.nixos.org.
 - An auto-update bot, like [nixpkgs-update](https://github.com/nix-community/nixpkgs-update).
 - A terminal UI for searching packages or configuring modules (module configs are forms, basically).
 
