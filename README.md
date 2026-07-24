@@ -30,6 +30,10 @@ nix run github:jurraca/nostrpkgs#nak --help
 ```
 You can pass arguments to it like you usually would, in this case print the help text.
 
+## Binary cache
+
+A binary cache is available serving these packages at https://nostrpkgs.cachix.org. See [CACHE.md](CACHE.md).
+
 ## Contributing
 
 Please contribute packages via PRs or request packages you would like to see included via Issues.
