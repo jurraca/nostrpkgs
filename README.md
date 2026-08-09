@@ -8,7 +8,7 @@ Be the easiest, fastest, and free-est way to use Nostr tools.
 
 ## Big goals
 
-- Modules for relays: provide canonical module implementations so that users can just pull in a relay to their NixOS config, declare its settings, and throw it in the cloud.
+- [X] Modules for relays: provide canonical module implementations so that users can just pull in a relay to their NixOS config, declare its settings, and throw it in the cloud.
 - Play nice with [nix-bitcoin](https://github.com/fort-nix/nix-bitcoin/): should just work by adding to, or combining with, a nix-bitcoin config. Think how alby-hub can use a LN node, or NWC.
 - [X] https://nostrpkgs.cachix.org . A Cache for binaries: provide a cache for users to leverage prebuilt binaries of theses tools, a la cache.nixos.org.
 - An auto-update bot, like [nixpkgs-update](https://github.com/nix-community/nixpkgs-update).
@@ -33,6 +33,12 @@ You can pass arguments to it like you usually would, in this case print the help
 ## Binary cache
 
 A binary cache is available serving these packages at https://nostrpkgs.cachix.org. See [CACHE.md](CACHE.md).
+
+## Using modules
+
+The `modules` dir contains module definitions you can pull in to your Nix config.
+
+The flake also exposes an `options` output which will print the available options for a module. Run: `nix eval --json .#options.{module_name}` for a given `module_name`. Very handy for agents to implement a module.
 
 ## Contributing
 
