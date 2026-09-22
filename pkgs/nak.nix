@@ -2,16 +2,16 @@
 
 buildGoModule rec {
   pname = "nak";
-  version = "0.20.1";
+  version = "0.20.7";
 
   src = fetchFromGitHub {
     owner = "fiatjaf";
     repo = "nak";
     rev = "v" + version;
-    sha256 = "sha256-QP2r+Eq0O9cRyF3NLT6s8L1CZqfiRdJ2O+nDfvrO5iI=";
+    sha256 = "sha256-4hnzi68K99rQjg3JtRND6TgM24qwD+8wVDNQT4u7eIo=";
   };
 
-  vendorHash = "sha256-uftDwPMu2pK5wEfMrO6HSRFcvcr+Cst3uQ8cpOMESs4=";
+  vendorHash = "sha256-nX4kt4HhO8YKqfd6XtNAbAPznHyg5BUZUu4oZh9mabc=";
   buildInputs = [ fuse2 ];
   env = {
     CGO_LDFLAGS = "-L${lib.getLib fuse2}/lib -lfuse";
