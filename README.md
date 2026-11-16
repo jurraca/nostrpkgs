@@ -30,10 +30,6 @@ nix run github:jurraca/nostrpkgs#nak --help
 ```
 You can pass arguments to it like you usually would, in this case print the help text.
 
-## Binary cache
-
-A binary cache is available serving these packages at https://nostrpkgs.cachix.org. See [CACHE.md](CACHE.md).
-
 ## Using modules
 
 The `modules` dir contains module definitions you can pull in to your Nix config.
